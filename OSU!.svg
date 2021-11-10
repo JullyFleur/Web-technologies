@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2">
+    <linearGradient
+       id="linearGradient18879">
+      <stop
+         style="stop-color:#e5d5ff;stop-opacity:1"
+         offset="0"
+         id="stop18875" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1"
+         offset="1"
+         id="stop18877" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient18697">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop18693" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop18695" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient15579">
+      <stop
+         style="stop-color:#ff80b2;stop-opacity:1;"
+         offset="0"
+         id="stop15575" />
+      <stop
+         style="stop-color:#ff0066;stop-opacity:1"
+         offset="1"
+         id="stop15577" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#linearGradient15579"
+       id="linearGradient15581"
+       x1="124.3596"
+       y1="95.098518"
+       x2="-42.42857"
+       y2="259.32635"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="pad" />
+    <linearGradient
+       xlink:href="#linearGradient18697"
+       id="linearGradient18699"
+       x1="55.829539"
+       y1="137.5271"
+       x2="164.36013"
+       y2="137.5271"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       xlink:href="#linearGradient18879"
+       id="linearGradient18881"
+       x1="143.01355"
+       y1="76.078819"
+       x2="15.727833"
+       y2="203.36453"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     id="layer1">
+    <circle
+       style="fill:#f9f9f9;stroke-width:0.264583;fill-opacity:1;stroke:url(#linearGradient18881)"
+       id="path53"
+       cx="110.27771"
+       cy="138.07574"
+       r="61.265392" />
+    <circle
+       style="fill:url(#linearGradient15581);stroke-width:0.264583;fill-opacity:1;stroke:url(#linearGradient18699)"
+       id="path187"
+       cx="110.09483"
+       cy="137.5271"
+       r="54.133003" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:44.5003px;line-height:1.55;font-family:sans-serif;letter-spacing:0.0111251px;fill:#f9f9f9;fill-opacity:1;stroke:none;stroke-width:1.11251"
+       x="65.545021"
+       y="151.94507"
+       id="text1285"><tspan
+         id="tspan1283"
+         style="fill:#f9f9f9;stroke-width:1.11251"
+         x="65.545021"
+         y="151.94507">osu!</tspan></text>
+  </g>
+</svg>
