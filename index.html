@@ -4,18 +4,67 @@
   <head>
   	<meta charset="UTF-8">
     	<title>osu!</title>
-	<style>
-	table, th, td {
-  		border: 1px solid black;
-	}
-	</style>
+	<meta name="author:" content="Julia Chirikanova">
+	<style> 
+        	table {
+        	background: black; 
+        	color: black; 
+		}
+		td, th {
+        	background: white; 
+        	padding: 5px;
+       		}
+       		.table1 {display: inline; position: static;}
+		:root {
+			--main-color: #1e1f45
+          	}
+
+          	html {
+            		background-color: var(--main-color);
+            		font-size: 20px
+          	}
+
+          	img[src] {position: relative; top: 10px; right: 10px;}
+    	    		h1, h3 {text-align:center; color:black}
+          	h1 + h3 {font-style:italic}
+          	*[class^=head] {display: block; font-size: 0.9em; line-height: 1.4; letter-spacing: 0.2px}
+          	h1 {
+            		margin: 0;
+            		padding: 20px 0;
+            		color: var(--main-color);
+            		text-shadow: 1px 1.5px 3px #e84a84;
+          	}
+          	.main {font-size: 17px; line-height: 1.5; letter-spacing: 0.5px;}
+          	h4 #list1 {font-style:italic}
+          	details:hover {color: var(--main-color)}
+          	a:link {color: var(--main-color);}
+          	a:visited{color: rebeccapurple;}
+          	p::first-letter {font-size: calc(17px + 10%);}
+
+         	body {
+			width: 70vw;
+            		display: block;
+            		margin: 0 auto;
+            		padding: 0 20px 20px 20px;
+            		border: 0.3cm solid #6b1535;
+            		background-image:url("https://img2.goodfon.ru/original/640x960/2/b9/tekstura-osu-osu-osu-texture-blue-goluboi-tsvet-sinii-tsvet.jpg");
+            		background-size: cover;
+          	}
+
+          	/*https://static.tildacdn.com/tild6165-3634-4434-a138-303164653730/1580481989_28-p-stil.jpg
+            	https://avatanplus.com/files/resources/original/5b6426fa65823164ff384230.jpg
+            	https://pbs.twimg.com/media/EZ54wV7UYAAV6tw.jpg
+          	*/
+
+    	</style>
   </head>
   <body>
     <article>
       <h1>Ритм-игра</h1>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Osu%21Logo_%282015%29.png/800px-Osu%21Logo_%282015%29.png" width="180" height="100">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Osu%21Logo_%282015%29.png/800px-Osu%21Logo_%282015%29.png" width="150" height="150">
       <section>
-        <p>музыкальная игра с <strong>открытым</strong> исходным кодом.</p>
+	<p style="font-size:12px; background: #fa73ab; border: 0.5rem solid; width: 45vh"> Музыкальная игра с <strong>открытым</strong> исходным кодом</p>
+         <p style="font-size:12px; background: #fa73ab; border: 0.5em solid; width: 45vw"> Тыкайте в <strong>кружочки </strong>с удовольствием!</p>
       </section>
       <section>
         <h2>Режимы игры:</h2>
@@ -39,7 +88,9 @@
           <p>тип карт, которые в процессе становления рейтинговыми. Эти карты задерживаются в статусе квалифицированных на одну неделю, после чего, если не было указано наличие каких-либо проблем, не соответствующих критериям для получения рейтинга, переходят в категорию «Рейтинговых». В обратном случае карты будут дисквалифицированы и поменяют статус на «В разработке». Данные карты не дают очки производительности игрокам.</p>
           <li>Любимые</li>
           <p>тип карт, которые получили положительные отзывы от сообщества. Карты этой категории не всегда могут соответствовать критериям для того, чтобы стать рейтинговыми, но пригодны для игры. Они имеют таблицу рекордов, которая может быть сброшена создателем карты. </p>
-          <li>Ожидающие и в разработке</li>
+	  <li></li>
+          <li style="display: inline">Ожидающие</li>
+          <li style="display: inline">В разработке</li>
           <p>типы карт, работа над которыми ещё не завершена, либо которые ждут квалификации. Объединяет их то, что у них нет таблиц рекордов.</p>
         </ul>
       </section>
@@ -58,7 +109,8 @@
           </tr>
           <tr>
             <td>Peaceful (Ю.Корея)</td>
-            <td>3</td>
+            <td><span style="display: inline-block">3</span></td>
+            <td>*В республике Корея</td>
           </tr>
           <tr>
             <td>le gagoguigo3 (Чили)</td>
@@ -73,8 +125,9 @@
     <section>
     	<h2>Ссылки:</h2>
         <ul>
-          <li><a href="https://github.com/ppy/osu">Ссылка на github</a> </li>
-          <li><a href="https://ru.wikipedia.org/wiki/Osu!">Osu! на википедии</a> </li>
+	<li id="contact" style="position: relative; left: 20px; display: block"><a href="https://github.com/JullyFleur"> ссылка на мой GitHub </a> </li>
+        <li id="contact" style="position: static; display: block"><a href="https://ru.wikipedia.org/wiki/Osu!">Osu! на википедии</a></li>
+        <li id="contact" style="position: absolute; left: 210px; display: block"><a href="https://github.com/ppy/osu"> ссылка на GitHub OSU!</a></li>
         </ul>
     </section>
     <p>JullyFleur&copy;</p>
