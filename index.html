@@ -61,6 +61,105 @@
     	</style>
   </head>
   <body>
+    <script>
+
+     "strict mode";
+
+      function doubler(a) {
+      return a*2;
+    }
+    //let
+
+    var a=-1;
+    {
+      let a=7;
+    }
+      {
+        for(i=0;i<10;i++){
+          a=doubler(a);
+        }
+        console.log("let="+a);
+      }
+
+
+      //var
+
+    var c=-1;
+      {
+        var c=7;
+      }
+        {
+          for(let i=0;i<10;i++){
+            c=doubler(c);
+          }
+          console.log("var="+c);
+        }
+
+    //разница == и ===
+
+    {
+      let a='14';
+      let b=14;
+      console.log("b==a "+ (b==a));
+      console.log("b===a "+ (b===a));
+    }
+
+    //typeof()
+    var phrase = "то тип переменной:"
+
+    {
+    let a=125;
+    console.log("если a=125,"+phrase + typeof(a));
+    a={};
+    console.log("если a в фигурных скобках,"+phrase + typeof(a));
+    a=true;
+    console.log("если a=true,"+phrase + typeof(a));
+    a='101';
+    console.log("если a в одинарных ковычках,"+phrase + typeof(a));
+    a=[0,0];
+    console.log("если a в квадратных скобках," +phrase + typeof(a));
+    a = (a,b) => a*b
+    console.log("если а - стрелочная функция,"+phrase + typeof(a));
+    }
+    // 3 типа for
+    {
+      let a=0;
+      for(;a<10;a++){
+        a=doubler(a);
+      }
+      console.log("a=" + a);
+      for(;;){
+        if(a>=10)break;
+        a=doubler(a);
+      }
+      console.log("a=" + a);
+      for(let i=0;i<10;i++){
+        a=doubler(a);
+      }
+      console.log("a=" + a);
+    }
+    globalThis["arr"] = [1, "2", 3, "4", 5, 6, "7"];
+    console.log(arr[4]);
+    delete globalThis["arr"];
+    let xplusx = x => x+x;
+    console.log("вывод стрелочной функции: "+xplusx);
+    let cube = x => Math.cbrt();
+    //разрушающее представление
+    let crash = function() {
+    return [10, 15, 50];
+    }
+
+    let cr2 = crash();
+    console.log(cr2); // Массив
+
+    [a1, a2, a3] = cr2;
+    console.log(a1); // 3 числа
+    console.log(a2);
+    console.log(a3);
+
+    //
+
+    </script>
     <article>
       <h1>Ритм-игра</h1>
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Osu%21Logo_%282015%29.png/800px-Osu%21Logo_%282015%29.png" width="180" height="100">
