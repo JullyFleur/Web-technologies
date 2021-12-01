@@ -122,28 +122,26 @@
     console.log("если а - стрелочная функция,"+phrase + typeof(a));
     }
     // 3 типа for
-    {
-      let a=0;
-      for(;a<10;a++){
-        a=doubler(a);
-      }
-      console.log("a=" + a);
-      for(;;){
-        if(a>=10)break;
-        a=doubler(a);
-      }
-      console.log("a=" + a);
-      for(let i=0;i<10;i++){
-        a=doubler(a);
-      }
-      console.log("a=" + a);
+    globalThis ["arr"] = [1,3,5,7];
+    globalThis ["obj"] = {"first":15, "second":55};
+    for (let i=11; i<30; i=i+5) {
+    console.log("for1="+i);
+    }
+
+    for (let r of arr) {
+      r += 1;
+      console.log("for2="+r);
+    }
+
+    for (let i in obj){
+    	console.log("for3=" + obj[i]);
     }
     globalThis["arr"] = [1, "2", 3, "4", 5, 6, "7"];
     console.log(arr[4]);
     delete globalThis["arr"];
     let xplusx = x => x+x;
-    console.log("вывод стрелочной функции: "+xplusx);
-    let cube = x => Math.cbrt();
+    console.log("вывод стрелочной функции xplusx: "+xplusx(5));
+    console.log("вывод функции Math.ceil(): "+Math.ceil(1.55));
     //разрушающее представление
     let crash = function() {
     return [10, 15, 50];
