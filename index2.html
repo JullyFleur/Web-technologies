@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<!--Немного информации об игре osu!-->
+<html>
+  <head>
+  	<meta charset="UTF-8">
+    	<title>osu!</title>
+	<meta name="author:" content="Julia Chirikanova">
+	<style>  /* type="text/css"*/
+        	table {
+        	background: black; /* Цвет фона таблицы */
+        	color: black; /* Цвет текста */
+		}
+		td, th {
+        	background: white; /* Цвет фона ячеек */
+        	padding: 5px; /* Поля вокруг текста */
+       		}
+       		.table1 {display: inline; position: static;}
+    	</style>
+    	<style>
+		:root {
+			--main-color: #00539F
+          	}
+
+          	html {
+            		background-color: var(--main-color);
+            		font-size: 20px
+          	}
+
+          	img[src] {position: relative; top: 10px; right: 10px;}
+    	    		h1, h3 {text-align:center; color:black}
+          	h1 + h3 {font-style:italic}
+          	*[class^=head] {display: block; font-size: 0.9em; line-height: 1.4; letter-spacing: 0.2px}
+          	h1 {
+            		margin: 0;
+            		padding: 20px 0;
+            		color: var(--main-color);
+            		text-shadow: 1px 1.5px 3px #004E93;
+          	}
+          	.main {font-size: 17px; line-height: 1.5; letter-spacing: 0.5px;}
+          	h4 #list1 {font-style:italic}
+          	details:hover {color: var(--main-color)}
+          	a:link {color: var(--main-color);}
+          	a:visited{color: rebeccapurple;}
+          	p::first-letter {font-size: calc(17px + 10%);}
+
+         	body {
+			width: 70vw;
+            		display: block;
+            		margin: 0 auto;
+            		padding: 0 20px 20px 20px;
+            		border: 0.3cm solid #023868;
+            		background-image:url("https://catherineasquithgallery.com/uploads/posts/2021-02/1613237152_222-p-fon-dlya-prezentatsii-svetlo-sinii-245.jpg");
+            		background-size: cover;
+          	}
+
+          	/*https://static.tildacdn.com/tild6165-3634-4434-a138-303164653730/1580481989_28-p-stil.jpg
+            	https://avatanplus.com/files/resources/original/5b6426fa65823164ff384230.jpg
+            	https://pbs.twimg.com/media/EZ54wV7UYAAV6tw.jpg
+          	*/
+
+    	</style>
+  </head>
+  <body>
+    <script>
+
+     "strict mode";
+
+      function doubler(a) {
+      return a*2;
+    }
+    //let
+
+    var a=-1;
+    {
+      let a=7;
+    }
+      {
+        for(i=0;i<10;i++){
+          a=doubler(a);
+        }
+        console.log("let="+a);
+      }
+
+
+      //var
+
+    var c=-1;
+      {
+        var c=7;
+      }
+        {
+          for(let i=0;i<10;i++){
+            c=doubler(c);
+          }
+          console.log("var="+c);
+        }
+
+    //разница == и ===
+
+    {
+      let a='14';
+      let b=14;
+      console.log("b==a "+ (b==a));
+      console.log("b===a "+ (b===a));
+    }
+
+    //typeof()
+    var phrase = "то тип переменной:"
+
+    {
+    let a=125;
+    console.log("если a=125,"+phrase + typeof(a));
+    a={};
+    console.log("если a в фигурных скобках,"+phrase + typeof(a));
+    a=true;
+    console.log("если a=true,"+phrase + typeof(a));
+    a='101';
+    console.log("если a в одинарных ковычках,"+phrase + typeof(a));
+    a=[0,0];
+    console.log("если a в квадратных скобках," +phrase + typeof(a));
+    a = (a,b) => a*b
+    console.log("если а - стрелочная функция,"+phrase + typeof(a));
+    }
+    // 3 типа for
+    globalThis ["arr"] = [1,3,5,7];
+    globalThis ["obj"] = {"first":15, "second":55};
+    for (let i=11; i<30; i=i+5) {
+    console.log("for1="+i);
+    }
+
+    for (let r of arr) {
+      r += 1;
+      console.log("for2="+r);
+    }
+
+    for (let i in obj){
+    	console.log("for3=" + obj[i]);
+    }
+    globalThis["arr"] = [1, "2", 3, "4", 5, 6, "7"];
+    console.log(arr[4]);
+    delete globalThis["arr"];
+    let xplusx = x => x+x;
+    console.log("вывод стрелочной функции xplusx: "+xplusx(5));
+    console.log("вывод функции Math.ceil(): "+Math.ceil(1.55));
+    //разрушающее представление
+    let crash = function() {
+    return [10, 15, 50];
+    }
+
+    let cr2 = crash();
+    console.log(cr2); // Массив
+
+    [a1, a2, a3] = cr2;
+    console.log(a1); // 3 числа
+    console.log(a2);
+    console.log(a3);
+
+//hw5
+
+class osu {
+#motivation
+  constructor(hours){
+    this.#motivation = "click the circles! let`s play!!!"
+    this.length = hours;
+    this.quality = "100% accuracy";
+    console.log(this.#motivation);
+  }
+  fail(){
+    console.log("OMG, i should play again");
+  }
+}
+
+// классовое наследование
+class badgame extends osu {
+  constructor(hours){
+    super(hours);
+    this.quality="accuracy <70%";
+  }
+  fail(){
+    super.fail()
+  }
+}
+
+let myosu = new badgame("not enough hours for good accuracy");
+myosu.fail();
+
+//через функцию
+function player(age, sex){
+  this.name = "Cookiezy"
+  this.old = age;
+  this.who = sex;
+  this.stamina = function(time) {
+    if (time>=100) {return "have a rest!";}
+    else {return "play more";}
+  };
+}
+
+
+let Karina = new player(19,"female");
+
+console.log(Karina.stamina(110));
+
+// прототипное наследование
+
+
+player.prototype = {
+
+  say: function(words) {
+    return this.name +' says: '+ words;
+  }
+};
+
+function lamer(){
+  this.name = "Alex";
+}
+
+
+//назначение прототипа
+lamer.prototype=Object.create(player.prototype)
+
+evillamer = new lamer (12,"male")
+
+console.log(evillamer.say("I JUST HAVE STARTED PLAYING! NO BULLYING"));
+//console.log(evilHydra.stamina(5));
+
+function goodplayer(){
+this.name="Markus";
+};
+
+goodplayer.prototype.topscore="Of, course!!!";
+
+//изменение прототипа
+
+Object.setPrototypeOf(lamer.prototype, goodplayer.prototype);
+
+//получение прототипа
+console.log(evillamer.topscore);
+
+//свойства
+
+let Ann = {
+
+  name: "Ann",
+  attitude: "Brave",
+  color: "Green"
+};
+
+Object.defineProperty(Ann,'name',{
+  configurable: false,// не позволяет вызывать методы defineProperty, delete и пр
+  writable: false, //не позволяет изменитьь свойство name
+  enumerable: false, //скрывает name из object.keys
+
+})
+
+Ann.attitude="Playful"
+Ann.name="Tommy"
+
+console.log(Ann.name+' ' + Ann.attitude +' '+ Object.keys(Ann));
+delete Ann.name
+console.log(Ann.name)
+
+
+
+Object.defineProperty(Ann,'attitude',{
+  configurable: true,// не позволяет вызывать методы defineProperty, delete и пр
+  writable: true, //не позволяет изменитьь свойство name
+  enumerable: true //скрывает name из object.keys
+})
+Ann.attitude="Weak"
+console.log(Ann.attitude)
+console.log(Ann.name+' ' + Ann.attitude +' '+ Object.keys(Ann));
+delete Ann.name
+console.log(Ann.name+' ' + Ann.attitude+' '+ Ann.color)
+
+
+//side effect
+Object.defineProperty(Ann,'Yelling',{
+  get: function(){
+    return this.color
+  },
+  set: function(value){
+  this.color=value.toUpperCase()
+}
+})
+
+console.log(Ann.Yelling)
+Ann.Yelling = "Be polite!"
+console.log(Ann.Yelling)
+
+//call method from another object
+let buller = {
+  offend: function(words) {
+    console.log( 'Buller just offended '+this.name +' with ' + words + " words")
+  }
+}
+let loser = {
+  name: "Richard"
+}
+buller.offend.call(loser,15);
+
+function reverseString(str) {
+    return str.split("").reverse().join("");
+}
+reverseString("hello");
+
+//new string method
+String.prototype.amplify = function() {
+ return reverseString(`${this}`+`${this}`+`${this}`)
+}
+
+let joker = "HAHA";
+console.log(`Normal joker: ${joker}`);
+console.log(`Crazy joker: ${joker.amplify()}`);
+
+//mixin
+
+let Hello_Mixin = {
+  Hi_user() {
+    alert(`Hello ${this.name}`);
+  },
+  Bye_bye() {
+    console.log(`Bye ${this.name}`);
+  }
+};
+
+// usage:
+class User {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+// copy the methods
+Object.assign(User.prototype, Hello_Mixin);
+
+// say HI to User
+new User("best player in the world!").Hi_user(); //alert: Hello best player in the world!
+// Bye_bye, User!
+new User("best player in the world!").Bye_bye(); // Bye best player in the world! in console
+
+//mixin2
+let MyMixin = (superclass) => class extends superclass {
+  foo() {
+    console.log(`foo from ${this.name}`);
+  }
+};
+class MyClass extends MyMixin(goodplayer) {
+}
+let mix = new MyClass();
+mix.foo(); // prints "foo from Markus"
+
+</script>
+<article>
+  <h1>Ритм-игра</h1>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Osu%21Logo_%282015%29.png/800px-Osu%21Logo_%282015%29.png" width="180" height="100">
+  <section>
+    <p>музыкальная игра с <strong>открытым</strong> исходным кодом.</p>
+  </section>
+  <section>
+    <h2>Режимы игры:</h2>
+    <ol start="0">
+      <li>Стандартный (osu!std)</li>
+      <p>состоит из прохождения карт, кликая на кружки, слайдеры и спиннеры. Данный режим был вдохновлён <strong>Osu! Tatakae! Ouendan и Elite Beat Agents</strong>. Игрок может использовать как только мышь, так и сочетание мышь/клавиатура или графический планшет/клавиатура, либо сенсорный экран устройства. Карты из режима osu! могут быть автоматически преобразованы игрой для использования в других режимах. </p>
+      <li>Барабаны (osu!taiko)</li>
+      <p>состоит из нажатий одной из четырёх нот (двух внешних, голубых, и двух внутренних, оранжевых) в ритм на интерфейсе, подобном барабанам. Он повторяет элементы игры <strong>Taiko no Tatsujin</strong>. Основные клавиши для выбивания нот: Z, X, C и V . </p>
+      <li>Ловля фруктов (osu!catch)</li>
+      <p>ранее известный как Catch the Beat (CtB) — оригинальный игровой режим, состоящий из ловли фруктов (играют роль нот), капелек (слайдеров) и бананов (спиннеров), падающих сверху в ритм, управляя персонажем, держащим тарелку. Управление производится через клавиши-стрелки (← и →) и ускорение через ⇧ Shift. </p>
+      <li>Симулятор пианино(osu!mania)</li>
+      <p>игровой режим, который состоит из нажатия клавиш в ритм, подобный серии игр <strong>Beatmania IIDX</strong>. Количество клавиш различается от 1 до 9 (в режиме для одного игрока), но самыми популярными у игроков являются 4 и 7 клавиш. </p>
+    </ol>
+  </section>
+  <section>
+    <h2>Карты:</h2>
+    <ul>
+      <li>Рейтинговые</li>
+      <p>тип созданных сообществом карт, которые были утверждены как пригодные для игры по стандартам качества командой Beatmap Nominators, или BN. Они дают очки производительности (pp, от performance points), которые позволят игрокам продвигаться по глобальной таблице производительности.</p>
+      <li>Квалифицированные</li>
+      <p>тип карт, которые в процессе становления рейтинговыми. Эти карты задерживаются в статусе квалифицированных на одну неделю, после чего, если не было указано наличие каких-либо проблем, не соответствующих критериям для получения рейтинга, переходят в категорию «Рейтинговых». В обратном случае карты будут дисквалифицированы и поменяют статус на «В разработке». Данные карты не дают очки производительности игрокам.</p>
+      <li>Любимые</li>
+      <p>тип карт, которые получили положительные отзывы от сообщества. Карты этой категории не всегда могут соответствовать критериям для того, чтобы стать рейтинговыми, но пригодны для игры. Они имеют таблицу рекордов, которая может быть сброшена создателем карты. </p>
+      <li>Ожидающие и в разработке</li>
+      <p>типы карт, работа над которыми ещё не завершена, либо которые ждут квалификации. Объединяет их то, что у них нет таблиц рекордов.</p>
+    </ul>
+  </section>
+</article>
+  <section>
+  <h2>Мировой рейтинг:</h2>
+    <table>
+      <caption>Лидеры таблицы по странам</caption>
+      <tr>
+        <th>Никнейм</th>
+        <th>Место</th>
+      </tr>
+      <tr>
+        <td>syaron105 (Япония)</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>Peaceful (Ю.Корея)</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>le gagoguigo3 (Чили)</td>
+        <td>17</td>
+      </tr>
+      <tr>
+        <td>goheegy (Великобритания)</td>
+        <td>24</td>
+      </tr>
+    </table>
+</section>
+<section>
+  <h2>Ссылки:</h2>
+        <ul>
+	         <li id="contact" style="position: relative; left: 20px; display: block"><a href="https://github.com/JullyFleur"> ссылка на мой GitHub </a> </li>
+           <li id="contact" style="position: static; display: block"><a href="https://ru.wikipedia.org/wiki/Osu!">Osu! на википедии</a></li>
+           <li id="contact" style="position: absolute; left: 210px; display: block"><a href="https://github.com/ppy/osu"> ссылка на GitHub OSU!</a></li>
+        </ul>
+    </section>
+    <p>JullyFleur&copy;</p>
+  </body>
+</html>
