@@ -221,7 +221,7 @@ lamer.prototype=Object.create(player.prototype)
 evillamer = new lamer (12,"male")
 
 console.log(evillamer.say("I JUST HAVE STARTED PLAYING! NO BULLYING"));
-//console.log(evilHydra.stamina(5));
+//console.log(evillamer.stamina(5));
 
 function goodplayer(){
 this.name="Markus";
@@ -339,12 +339,12 @@ new User("best player in the world!").Hi_user(); //alert: Hello best player in t
 new User("best player in the world!").Bye_bye(); // Bye best player in the world! in console
 
 //mixin2
-let MyMixin = (superclass) => class extends superclass {
+let Mixin2 = (superclass) => class extends superclass {
   foo() {
     console.log(`foo from ${this.name}`);
   }
 };
-class MyClass extends MyMixin(goodplayer) {
+class MyClass extends Mixin2(goodplayer) {
 }
 let mix = new MyClass();
 mix.foo(); // prints "foo from Markus"
